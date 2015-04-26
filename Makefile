@@ -13,6 +13,6 @@ coverage:
 	./bin/phpunit --coverage-html build/coverage
 
 cs:
-	./bin/php-cs-fixer fix
+	./bin/php-cs-fixer fix 2>/dev/null; true
 
 .PHONY: tests coverage cs travis-tests
