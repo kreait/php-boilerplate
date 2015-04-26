@@ -1,0 +1,34 @@
+language: php
+
+sudo: false
+
+before_install:
+    - composer self-update
+
+install: composer update
+
+php:
+    - 5.4
+    - 5.5
+    - 5.6
+    - 7.0
+    - hhvm
+    - hhvm-nightly
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+matrix:
+    fast_finish: true
+    allow_failures:
+        - php: 7.0
+        - php: hhvm
+        - php: hhvm-nightly
+
+before_script:
+    - [[ "$TRAVIS_PHP_VERSION" == "hhv*" ]] && cat .travis.ini >> /etc/hhvm/php.ini
+    - [[ "$TRAVIS_PHP_VERSION" == "php*" ]] && phpenv config-add .travis.ini
+
+script:
+    - make tests
