@@ -10,7 +10,7 @@ A boilerplate for new composer based PHP projects.
 $ composer create-project kreait/php-boilerplate new-project
 ```
 
-### Update `composer.jon`
+### Update `composer.json`
 
 Replace the Namespaces in the `autoload` and `autoload-dev` sections with your project's namespaces.
 
