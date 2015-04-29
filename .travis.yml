@@ -22,7 +22,6 @@ matrix:
     fast_finish: true
     allow_failures:
         - php: 7.0
-        - php: hhvm
 
 before_script:
     - [[ "$TRAVIS_PHP_VERSION" == "hhv*" ]] && cat .travis.ini >> /etc/hhvm/php.ini
