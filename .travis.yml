@@ -13,7 +13,6 @@ php:
     - 5.6
     - 7.0
     - hhvm
-    - hhvm-nightly
 
 cache:
     directories:
@@ -24,7 +23,6 @@ matrix:
     allow_failures:
         - php: 7.0
         - php: hhvm
-        - php: hhvm-nightly
 
 before_script:
     - [[ "$TRAVIS_PHP_VERSION" == "hhv*" ]] && cat .travis.ini >> /etc/hhvm/php.ini
