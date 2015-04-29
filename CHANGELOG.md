@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## 1.1.1 - 2015-04-29
 
 * Don't allow failures for HHVM.
 * Add lowest PHP version (5.4) with lowest possible dependencies.
