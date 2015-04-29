@@ -24,7 +24,8 @@ cache:
     directories:
         - $HOME/.composer/cache
 
-install: travis_retry composer install ${COMPOSER_FLAGS} --no-interaction
+install:
+    - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
 
 before_script:
     - [[ "$TRAVIS_PHP_VERSION" == "hhv*" ]] && cat .travis.ini >> /etc/hhvm/php.ini
