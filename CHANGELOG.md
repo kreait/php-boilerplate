@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.1 - 2015-04-29
+
+* Remove HHVM nightly
+* Set minimum PHP version in `composer.json` to PHP 5.4, as this is the lowest maintained version.
+* Use `composer install` instead of `composer update` on Travis CI.
+* Use `travis_retry` to handle network timeouts.
+
 ## 1.0.1 - 2015-04-26
 
 * Suppress make error when executing the PHP CS Fixer. 
