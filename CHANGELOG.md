@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## 1.1.2 - 2015-08-03
 
 * Fixed the `before_script` commands in the Travis CI configuration
 
