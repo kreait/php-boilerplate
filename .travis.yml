@@ -28,8 +28,8 @@ install:
     - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
 
 before_script:
-    - [[ "$TRAVIS_PHP_VERSION" == "hhv*" ]] && cat .travis.ini >> /etc/hhvm/php.ini
-    - [[ "$TRAVIS_PHP_VERSION" == "php*" ]] && phpenv config-add .travis.ini
+    - if [ "$TRAVIS_PHP_VERSION" = "hhv*" ]; then cat tests/fixtures/travis.ini >> /etc/hhvm/php.ini; fi;
+    - if [ "$TRAVIS_PHP_VERSION" = "php*" ]; then phpenv config-add tests/fixtures/travis.ini ; fi;
 
 script:
     - make tests

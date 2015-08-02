@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unreleased
+
+* Fixed the `before_script` commands in the Travis CI configuration
+
 ## 1.1.1 - 2015-04-29
 
 * Don't allow failures for HHVM.
