@@ -1,18 +1,16 @@
-default: help
+.PHONY: help tests
+.DEFAULT_GOAL := help
 
 help:
-	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "  tests                  Executes the Unit tests"
-	@echo "  coverage               Creates the Coverage reports"
-	@echo "  cs                     Executes the PHP CS Fixer"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-12s\033[0m %s\n", $$1, $$2}'
 
-tests:
+tests: ## Executes the test suite
 	./bin/phpunit
 
-coverage:
+coverage: ## Executes the test suite and creates code coverage reports
 	./bin/phpunit --coverage-html build/coverage
 
-cs:
+cs: ## Applies coding style fixes
 	./bin/php-cs-fixer fix 2>/dev/null; true
 
-.PHONY: tests coverage cs travis-tests
+
