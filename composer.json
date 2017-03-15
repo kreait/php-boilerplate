@@ -2,6 +2,7 @@
     "name": "kreait/php-boilerplate",
     "description": "A boilerplate for new composer based PHP projects.",
     "keywords": ["boilerplate", "skeleton"],
+    "license": "MIT",
     "require": {
         "php": "^7.0"
     },
