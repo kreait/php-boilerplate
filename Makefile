@@ -10,7 +10,16 @@ tests: ## Executes the test suite
 coverage: ## Executes the test suite and creates code coverage reports
 	./bin/phpunit --coverage-html build/coverage
 
-cs: ## Applies coding style fixes
-	./bin/php-cs-fixer fix 2>/dev/null; true
+view-coverage: ## Shows the code coverage report
+	open build/coverage/index.html
 
+cs: ## Fixes coding standard problems
+	@./bin/php-cs-fixer fix || true
 
+tag: ## Creates a new signed git tag
+	$(if $(TAG),,$(error TAG is not defined. Pass via "make tag TAG=X.X.X"))
+	@echo Tagging $(TAG)
+	chag update $(TAG)
+	git add --all
+	git commit -m 'Release $(TAG)'
+	git tag -s $(TAG) -m 'Release $(TAG)'
