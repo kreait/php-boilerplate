@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## Unreleased
+
+* Updated dependencies
+  * PHP ^7.0
+  * PHPUnit ^6.0
+  * PHP CS Fixer ^2.0
+* Added Makefile tasks
+  * `make view-coverage` to open a new browser window with the results from `make coverage`
+  * `make tag` to create a signed git tag, see https://help.github.com/articles/signing-commits-using-gpg/
+* Simplified Travis CI configuration
+
 ## 1.1.2 - 2015-08-03
 
 * Fixed the `before_script` commands in the Travis CI configuration
