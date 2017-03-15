@@ -7,22 +7,18 @@ This source file is subject to the license that is bundled
 with this source code in the file LICENSE.
 EOF;
 
-Symfony\CS\Fixer\Contrib\HeaderCommentFixer::setHeader($header);
+$finder = PhpCsFixer\Finder::create()
+    ->exclude(['bin', 'build', 'vendor'])
+    ->in(__DIR__);
 
-return Symfony\CS\Config\Config::create()
-    ->level(Symfony\CS\FixerInterface::SYMFONY_LEVEL)
-    ->fixers([
-        'header_comment',
-        'multiline_spaces_before_semicolon',
-        'ordered_use',
-        'phpdoc_order',
-        'short_array_syntax',
-    ])
-    ->finder(
-        Symfony\CS\Finder\DefaultFinder::create()
-            ->exclude('bin')
-            ->exclude('build')
-            ->exclude('vendor')
-            ->in(__DIR__)
-    )
-;
+return PhpCsFixer\Config::create()
+    ->setFinder($finder)
+    ->setUsingCache(true)
+    ->setRules([
+        '@Symfony' => true,
+        'header_comment' => ['header' => $header],
+        'phpdoc_align' => false,
+        'phpdoc_order' => true,
+        'ordered_imports' => true,
+        'array_syntax' => ['syntax' => 'short'],
+    ]);
