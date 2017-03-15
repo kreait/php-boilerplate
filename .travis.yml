@@ -1,35 +1,21 @@
 language: php
 
-sudo: false
-
-before_install:
-    - composer self-update
-
 php:
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
-    - hhvm
+  - 7.0
+  - 7.1
 
 matrix:
-    fast_finish: true
-    include:
-        - php: 5.4
-          env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
-    allow_failures:
-        - php: 7.0
+  fast_finish: true
+  include:
+    - php: 7.0
+      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
 
 cache:
-    directories:
-        - $HOME/.composer/cache
+  directories:
+    - $HOME/.composer/cache
 
 install:
-    - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
-
-before_script:
-    - if [ "$TRAVIS_PHP_VERSION" = "hhv*" ]; then cat tests/fixtures/travis.ini >> /etc/hhvm/php.ini; fi;
-    - if [ "$TRAVIS_PHP_VERSION" = "php*" ]; then phpenv config-add tests/fixtures/travis.ini ; fi;
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
 
 script:
     - make tests
