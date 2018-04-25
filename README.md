@@ -4,10 +4,12 @@ A boilerplate for new composer based PHP projects.
 
 ## Getting started
 
-### Create a new project based on the boilerplate:
-
 ```bash
+# With composer
 $ composer create-project kreait/php-boilerplate new-project
+
+# With git
+$ git clone git@github.com:kreait/php-boilerplate.git new-project && cd $_ && rm -rf .git && git init
 ```
 
 ### Update `composer.json`
