@@ -8,7 +8,7 @@ with this source code in the file LICENSE.
 EOF;
 
 $finder = PhpCsFixer\Finder::create()
-    ->exclude(['bin', 'build', 'vendor'])
+    ->exclude(['build', 'vendor'])
     ->in(__DIR__);
 
 return PhpCsFixer\Config::create()
