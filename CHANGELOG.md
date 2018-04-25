@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## 3.0.0 - 2018-04-25
 
 * Updated dependencies
   * PHP ^7.2
