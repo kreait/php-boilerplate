@@ -4,7 +4,7 @@
     "keywords": ["boilerplate", "skeleton"],
     "license": "MIT",
     "require": {
-        "php": "^7.0"
+        "php": "^7.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0",
@@ -22,6 +22,9 @@
     },
     "config": {
         "bin-dir": "bin",
+        "platform": {
+            "php": "7.2"
+        },
         "sort-packages": true
     }
 }

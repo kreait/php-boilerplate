@@ -1,13 +1,10 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
-
 matrix:
   fast_finish: true
   include:
-    - php: 7.0
+    - php: 7.2
+    - php: 7.2
       env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
 
 cache:
@@ -15,7 +12,7 @@ cache:
     - $HOME/.composer/cache
 
 install:
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
+  - composer update ${COMPOSER_FLAGS} --no-interaction
 
 script:
     - make tests
