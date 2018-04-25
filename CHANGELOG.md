@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Unreleased
+
+* Updated dependencies
+  * PHP ^7.2
+  * PHPUnit ^7.0
+
 ## 2.0.0 - 2017-03-15
 
 * Updated dependencies
