@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unreleased
+
+* Fixed whitelist definition in `phpunit.xml.dist`
+
 ## 3.0.0 - 2018-04-25
 
 * Updated dependencies
